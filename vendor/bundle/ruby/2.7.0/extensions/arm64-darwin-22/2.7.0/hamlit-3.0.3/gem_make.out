@@ -1,0 +1,16 @@
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230624-15285-yr1a29.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR="
+compiling hamlit.c
+compiling hescape.c
+linking shared-object hamlit/hamlit.bundle
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/hamlit-3.0.3/ext/hamlit
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hamlit.bundle ./.gem.20230624-15285-gl0t5/hamlit
