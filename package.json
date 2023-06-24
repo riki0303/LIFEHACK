@@ -11,6 +11,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^4.15.1"
+    "@webpack-cli/serve": "^2.0.4",
+    "webpack-dev-server": "~3"
   }
 }
