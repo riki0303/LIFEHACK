@@ -1,0 +1,16 @@
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+/Users/kokuboriki/.rbenv/versions/2.7.7/bin/ruby -I /Users/kokuboriki/.rbenv/versions/2.7.7/lib/ruby/2.7.0 -r ./siteconf20230624-15285-1u0luxp.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" clean
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR="
+compiling haml.c
+compiling hescape.c
+linking shared-object haml/haml.bundle
+
+current directory: /Users/kokuboriki/LIFEHACK/vendor/bundle/ruby/2.7.0/gems/haml-6.1.1/ext/haml
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 haml.bundle ./.gem.20230624-15285-12zw9q0/haml
