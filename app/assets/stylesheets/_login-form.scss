@@ -1,0 +1,19 @@
+@import 'variable';
+
+.login-form {
+  margin-top: 135px;
+}
+
+.login-form__item {
+  border: 1px solid $color-border;
+  margin-top: 20px;
+}
+
+.login-form__field {
+  width: 100%;
+  padding: 12px 0px 12px 16px;
+}
+
+.login-form__button {
+  margin-top: 250px;
+}

@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'reset';
+@import 'variable';
+@import 'arrow-left';
+@import 'button';
+@import 'header';
+@import 'login-form';
+// 共通css
+.container {
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+a,
+button:hover {
+  opacity: 0.8;
+}
