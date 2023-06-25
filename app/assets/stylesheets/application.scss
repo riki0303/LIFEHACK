@@ -15,3 +15,12 @@
  */
 
 @import 'reset';
+@import 'variable';
+@import 'arrow-left';
+@import 'header';
+
+// 共通css
+.container {
+  max-width: 330px;
+  margin: 0 auto;
+}

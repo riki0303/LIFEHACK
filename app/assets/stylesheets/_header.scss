@@ -1,0 +1,22 @@
+@import 'variable';
+.header {
+  margin-top: 50px;
+  border-bottom: 1px solid $color-border;
+  padding-bottom: 13px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header__right {
+  text-align: right;
+}
