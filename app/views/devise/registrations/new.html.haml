@@ -1,9 +1,4 @@
-%header.header
-  .container
-    .header__container
-      %span.arrow-left
-      %h2.header__title 登録
-      .header__right
+= render 'commons/header', title: '登録'
 
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
