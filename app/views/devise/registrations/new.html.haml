@@ -5,11 +5,11 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .login-form__item
-        = f.text_field :account, autofocus: true, placeholder: 'アカウント名', class: 'login-form__field'
+        = f.text_field :account, autofocus: true, placeholder: 'アカウント名 (6文字以上)', class: 'login-form__field'
       .login-form__item
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'login-form__field'
       .login-form__item
-        = f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード',class: 'login-form__field'
+        = f.password_field :password, autocomplete: "new-password", placeholder: 'パスワード (6文字以上)',class: 'login-form__field'
       .login-form__item
         = f.password_field :password_confirmation, autocomplete: "new-password",placeholder: 'パスワードを再度入力して下さい',class: 'login-form__field'
       %button.login-form__button.button-primary
