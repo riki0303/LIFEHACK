@@ -24,5 +24,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :account, length: {minimum: 6}
+  validates :account, length: {minimum: 6}, uniqueness: true
 end
