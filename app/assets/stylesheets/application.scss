@@ -20,10 +20,21 @@
 @import 'button';
 @import 'header';
 @import 'login-form';
+@import 'top';
+
 // 共通css
+html {
+  font-family: 'Notosans' 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial',
+    'Yu Gothic', 'Meiryo', sans-serif;
+}
+
 .container {
   max-width: 330px;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 a,

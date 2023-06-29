@@ -1,0 +1,39 @@
+@import 'variable';
+
+.top {
+  height: 100vh;
+}
+.top__logo-container {
+  max-width: 450px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-logo {
+  width: 100%;
+}
+
+.top__tile {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.top__btn-container {
+  margin-top: 70%;
+  margin-bottom: 100px;
+}
+
+.top__btn-primary {
+  a {
+    color: $color-white;
+  }
+}
+
+.top__btn-secondary {
+  margin-top: 16px;
+  a {
+    color: black;
+  }
+}
