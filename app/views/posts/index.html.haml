@@ -1,0 +1,6 @@
+= render 'commons/header', title: 'LIFEHACK'
+
+- @posts.each do |post|
+  = post.title
+  = post.content
+
