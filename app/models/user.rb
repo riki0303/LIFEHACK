@@ -25,4 +25,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :account, length: {minimum: 6}, uniqueness: true
+
+  has_many :posts, dependent: :destroy
 end
