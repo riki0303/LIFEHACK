@@ -1,6 +1,6 @@
 = render 'commons/header', title: '新規投稿'
 
-= form_with model: @post, local: true do |f|
+= form_with(model: @post, local: true) do |f|
   .login-form__item
     = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'login-form__field'
   .login-form__item
