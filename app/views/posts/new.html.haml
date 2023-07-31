@@ -1,3 +1,7 @@
+%ul
+  - @post.errors.full_messages.each do |message|
+    %li= message
+    
 = render 'commons/header', title: '新規投稿'
 
 = form_with(model: @post, local: true) do |f|
