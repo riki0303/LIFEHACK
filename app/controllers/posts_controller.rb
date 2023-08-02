@@ -16,10 +16,31 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to posts_path, notice: '投稿出来ました'
     else
+      flash.now[:error] = '投稿出来ませんでした'
       render :new
     end
+  end
+
+  def edit
+    @post = current_user.posts.find(params[:id])
+  end
+
+  def update
+    @post = current_user.posts.find(params[:id])
+    if @post.update(post_params)
+      redirect_to posts_path, notice: '更新出来ました'
+    else
+      flash.now[:error] = '更新出来ませんでした'
+      render :edit
+    end
+  end
+
+  def destroy
+    post = current_user.posts.find(params[:id])
+    post.destroy!
+    redirect_to posts_path, notice: '削除出来ました'
   end
 
   private

@@ -2,7 +2,7 @@
   - @post.errors.full_messages.each do |message|
     %li= message
     
-= render 'commons/header', title: '新規投稿'
+= render 'commons/header', title: '編集'
 
 = form_with(model: @post, local: true) do |f|
   .login-form__item
@@ -10,4 +10,4 @@
   .login-form__item
     = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'login-form__field'
   %button.login-form__button.button-primary
-    = f.submit "投稿する"
+    = f.submit "変更する"

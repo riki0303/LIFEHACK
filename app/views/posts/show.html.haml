@@ -2,3 +2,6 @@
 
 = @post.title
 = @post.content
+
+= link_to '編集', edit_post_path
+= link_to '削除', post_path, method: :delete, data: { confirm: '削除して宜しいですか？' }
