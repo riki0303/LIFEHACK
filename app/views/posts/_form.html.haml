@@ -7,5 +7,6 @@
     = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'login-form__field'
   .login-form__item
     = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'login-form__field'
+  = f.file_field :image
   %button.login-form__button.button-primary
     = f.submit "投稿する"
