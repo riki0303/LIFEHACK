@@ -1,0 +1,45 @@
+@import 'variable';
+
+.post__item:not(:first-child) {
+  margin-top: 40px;
+}
+
+.post__head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.post__avatar {
+  width: 42px;
+  height: 42px;
+}
+
+.post__image {
+  margin-top: 30px;
+  height: 250px;
+  img {
+    object-fit: cover;
+  }
+}
+
+.post__btn-container {
+  margin-top: 12px;
+  display: flex;
+  gap: 15px;
+  img {
+    width: 22px;
+    height: 21px;
+  }
+}
+
+.post__title {
+  font-size: 14px;
+  font-weight: 50;
+  margin-top: 10px;
+}
+
+.post__content {
+  font-size: 14px;
+  margin-top: 20px;
+}

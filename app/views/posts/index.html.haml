@@ -1,10 +1,24 @@
 = render 'commons/header', title: 'LIFEHACK'
 
 
+.container
+  .post
+    - @posts.each do |post|
+      .post__item
+        .post__head
+          = image_tag 'profile.png', class: 'post__avatar'
+          %p.post__account riki0303
+        .post__image
+          = display_post_image(post)
+        .post__btn-container
+          .like-inactive
+            = image_tag 'un-like.png'
+          = link_to image_tag('comment.png')
+          = link_to image_tag('share.png'), 'https://twitter.com/share?'
+        %h2.post__title
+          = post.title
+        %p.post__content
+          = post.content
 
-- @posts.each do |post|
-  = post.title
-  = post.content
-  = display_post_image(post)
+  = link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
 
-= link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }

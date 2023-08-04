@@ -4,6 +4,7 @@
       = link_to :back do
         %span.arrow-left
       -# ページごとにtitle分ける
-      %h2.header__title
-        = title
+      = link_to posts_path do
+        %h1.header__title
+          = title
       .header__right
