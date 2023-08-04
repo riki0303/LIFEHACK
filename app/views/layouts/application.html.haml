@@ -8,6 +8,7 @@
     %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{crossorigin: "anonymous", src: "https://kit.fontawesome.com/ebdd27bd0a.js"}
   %body
     - if flash.present?
       .flash
