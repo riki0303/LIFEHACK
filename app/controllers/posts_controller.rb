@@ -18,7 +18,6 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path, notice: '投稿出来ました'
     else
-      flash.now[:error] = '投稿出来ませんでした'
       render :new
     end
   end

@@ -1,14 +1,16 @@
-%ul
-  - post.errors.full_messages.each do |message|
-    %li= message
-
 .container
-  = form_with(model: post, local: true) do |f|
-    .form__item
-      = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'form__field'
-    .form__item
-      = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'form__field'
-    .form__item
-      = f.file_field :image
-    %button.form__button.button-primary
-      = f.submit "投稿する"
+  %ul.validation
+  - post.errors.full_messages.each do |message|
+    %li.validation__item
+      = message
+      
+  .form
+    = form_with(model: post, local: true) do |f|
+      .form__item
+        = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'form__field'
+      .form__item
+        = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'form__field'
+      .form__item
+        = f.file_field :image
+      %button.form__button.button-primary
+        = f.submit "投稿する"

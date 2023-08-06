@@ -1,0 +1,35 @@
+@import 'variable';
+
+.flash {
+  background-color: $color-blue;
+  text-align: center;
+  padding: 5px 0px;
+}
+
+.flash--fadeout {
+  animation-name: fadeout;
+  visibility: hidden;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes fadeout {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  50% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.notice {
+  color: $color-white;
+}
