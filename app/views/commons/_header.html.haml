@@ -9,14 +9,14 @@
       .header__right
         %i.fa-solid.fa-ellipsis.fa-lg.header__tab
           %nav.header__nav
-            .header__nav-link
-              = link_to 'ホーム', posts_path
-            .header__nav-link
-              = link_to '新規投稿', new_post_path
-            .header__nav-link
-              = link_to 'プロフィール'
-            .header__nav-link
-              = link_to 'ログアウト', destroy_user_session_path, method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
+            .header__nav-item
+              = link_to 'ホーム', posts_path, class: 'header__nav-link'
+            .header__nav-item
+              = link_to '新規投稿', new_post_path, class: 'header__nav-link'
+            .header__nav-item
+              = link_to 'プロフィール', '#', class: 'header__nav-link'
+            .header__nav-item
+              = link_to 'ログアウト', destroy_user_session_path, class: 'header__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
             
 
 - if flash.present?

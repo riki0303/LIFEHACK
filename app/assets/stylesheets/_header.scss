@@ -41,12 +41,16 @@
   display: block;
 }
 
-.header__nav-link {
+.header__nav-item {
   text-align: left;
-  padding: 20px 10px;
   font-size: 16px;
 }
 
 .header__nav:first-child {
   margin-top: 10px;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 20px 10px;
 }
