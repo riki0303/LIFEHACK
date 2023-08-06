@@ -1,0 +1,15 @@
+@import 'variable';
+
+.form__item {
+  border: 1px solid $color-border;
+  margin-top: 50px;
+}
+
+.form__field {
+  width: 100%;
+  padding: 12px 0px 12px 16px;
+}
+
+.form__button {
+  margin-top: 250px;
+}

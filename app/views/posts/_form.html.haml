@@ -2,11 +2,13 @@
   - post.errors.full_messages.each do |message|
     %li= message
 
-= form_with(model: post, local: true) do |f|
-  .login-form__item
-    = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'login-form__field'
-  .login-form__item
-    = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'login-form__field'
-  = f.file_field :image
-  %button.login-form__button.button-primary
-    = f.submit "投稿する"
+.container
+  = form_with(model: post, local: true) do |f|
+    .form__item
+      = f.text_field :title, autofocus: true, placeholder: 'タイトル', class: 'form__field'
+    .form__item
+      = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'form__field'
+    .form__item
+      = f.file_field :image
+    %button.form__button.button-primary
+      = f.submit "投稿する"
