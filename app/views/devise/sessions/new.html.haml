@@ -2,7 +2,7 @@
 
 .container
   .login-form
-    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = login-form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .login-form__item
         = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス', class: 'login-form__field'
