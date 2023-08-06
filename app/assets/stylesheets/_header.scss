@@ -4,7 +4,6 @@
   padding-bottom: 13px;
 }
 
-
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -19,4 +18,34 @@
 
 .header__right {
   text-align: right;
+}
+
+.header__tab {
+  position: relative;
+  cursor: pointer;
+}
+
+.header__nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 180px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header__tab:hover .header__nav {
+  display: block;
+}
+
+.header__nav-link {
+  text-align: left;
+  padding: 20px 10px;
+  font-size: 16px;
+}
+
+.header__nav:first-child {
+  margin-top: 10px;
 }
