@@ -4,4 +4,5 @@ Rails.application.routes.draw do
 
   root 'homes#show'
   resources :posts
+  resource :profile, only: [:show, :edit, :update]
 end
