@@ -5,20 +5,7 @@
   .post
     - @posts.each do |post|
       .post__item
-        .post__head
-          = image_tag 'profile.png', class: 'post__avatar'
-          %p.post__account riki0303
-        = link_to post_path(post), class: 'post__image' do
-          = display_post_image(post)
-        .post__btn-container
-          .like-inactive
-            = image_tag 'un-like.png'
-          = link_to image_tag('comment.png')
-          = link_to image_tag('share.png'), 'https://twitter.com/share?'
-        %h2.post__title
-          = post.title
-        %p.post__content
-          = post.content
+        = render 'post', post: post
 
 
 
