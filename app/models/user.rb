@@ -27,5 +27,8 @@ class User < ApplicationRecord
   validates :account, length: {minimum: 6}, uniqueness: true
 
   has_many :posts, dependent: :destroy
-  
+
+  def my_post?(user, post)
+    user == post.user
+  end
 end

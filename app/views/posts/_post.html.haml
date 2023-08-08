@@ -1,0 +1,22 @@
+.post__head
+  = image_tag 'profile.png', class: 'post__avatar'
+  %p.post__account riki0303
+  - if my_post?(current_user, post)
+    %i.fa-regular.fa-pen-to-square.post__tab
+      %ul.post__nav
+        %li.post__nav-item
+          = link_to '編集', edit_post_path(post), class: 'post__nav-link'
+        %li.post__nav-item
+          = link_to '削除', post_path(post), method: :delete, data: { confirm: '削除して宜しいですか？' }, class: 'post__nav-link'
+
+= link_to post_path(post), class: 'post__image' do
+  = image_tag post.image
+.post__btn-container
+  .like-inactive
+    = image_tag 'un-like.png'
+  = link_to image_tag('comment.png')
+  = link_to image_tag('share.png'), 'https://twitter.com/share?'
+%h2.post__title
+  = post.title
+%p.post__content
+  = post.content

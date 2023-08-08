@@ -30,6 +30,7 @@
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
   width: 120px;
   height: 180px;
   background: #fff;
@@ -41,12 +42,16 @@
   display: block;
 }
 
-.header__nav-link {
+.header__nav-item {
   text-align: left;
-  padding: 20px 10px;
   font-size: 16px;
 }
 
 .header__nav:first-child {
   margin-top: 10px;
+}
+
+.header__nav-link {
+  display: block;
+  padding: 20px 10px;
 }
