@@ -8,7 +8,7 @@
         .post__head
           = image_tag 'profile.png', class: 'post__avatar'
           %p.post__account riki0303
-        .post__image
+        = link_to post_path(post), class: 'post__image' do
           = display_post_image(post)
         .post__btn-container
           .like-inactive

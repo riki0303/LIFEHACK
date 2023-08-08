@@ -17,7 +17,7 @@
               = link_to 'プロフィール', '#', class: 'header__nav-link'
             .header__nav-item
               = link_to 'ログアウト', destroy_user_session_path, class: 'header__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
-            
+
 
 - if flash.present?
   .flash.flash--fadeout
