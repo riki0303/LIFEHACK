@@ -8,6 +8,37 @@
   display: flex;
   align-items: center;
   gap: 20px;
+  position: relative;
+}
+
+.post__tab {
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
+.post__nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+.post__tab:hover .post__nav {
+  display: block;
+}
+
+.post__nav-link {
+  display: block;
+  padding: 10px 20px;
+  font-weight: bold;
 }
 
 .post__avatar {
@@ -17,15 +48,16 @@
 
 .post__image {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   height: 250px;
   img {
     object-fit: cover;
+    border-radius: 5px;
   }
 }
 
 .post__btn-container {
-  margin-top: 12px;
+  margin-top: 20px;
   display: flex;
   gap: 15px;
   img {
