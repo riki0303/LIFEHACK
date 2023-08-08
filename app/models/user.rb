@@ -28,4 +28,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  def my_post?(user, post)
+    user == post.user
+  end
 end
