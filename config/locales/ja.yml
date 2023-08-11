@@ -12,6 +12,10 @@ ja:
         title: 'タイトル'
         content: '投稿内容'
         image: 画像
+      profile:
+        name: '名前'
+        bio: '自己紹介'
+        avatar: 'アバター画像'
   date:
     abbr_day_names:
       - 日
