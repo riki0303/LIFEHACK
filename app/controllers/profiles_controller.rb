@@ -15,7 +15,6 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to profile_path, notice: '更新出来ました'
     else
-      flash.now[:error] = '更新出来ませんでした'
       render :edit
     end
   end
