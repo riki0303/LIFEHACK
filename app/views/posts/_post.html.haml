@@ -1,5 +1,5 @@
 .post__head
-  = image_tag 'profile.png', class: 'post__avatar'
+  = user_avatar(post)
   %p.post__account
     = post.user.account
   - if my_post?(current_user, post)
