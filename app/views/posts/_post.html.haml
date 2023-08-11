@@ -1,6 +1,7 @@
 .post__head
-  = image_tag 'profile.png', class: 'post__avatar'
-  %p.post__account riki0303
+  = user_avatar(post)
+  %p.post__account
+    = post.user.account
   - if my_post?(current_user, post)
     %i.fa-regular.fa-pen-to-square.post__tab
       %ul.post__nav
