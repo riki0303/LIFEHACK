@@ -1,8 +1,9 @@
 = render 'commons/header', title: 'アカウント名'
 
+
 %p profile
 = @profile&.name
 = @profile&.bio
-= image_tag @profile&.avatar
+= display_profile_avatar(@profile)
 
 = link_to '編集', edit_profile_path
