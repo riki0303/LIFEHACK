@@ -1,9 +1,32 @@
 = render 'commons/header', title: 'アカウント名'
 
 
-%p profile
-= @profile&.name
-= @profile&.bio
-= display_profile_avatar(@profile)
+.container
+  .profile
+    = display_profile_avatar(@profile)
+    %p.profile__name
+      = @profile&.name
+    %p.profile__bio
+      = @profile&.bio
 
-= link_to '編集', edit_profile_path
+  .profile__edit-btn
+    = link_to '編集する', edit_profile_path , class: 'profile__edit'
+
+    .profile__parameter-container
+      .profile__parameter
+        .profile__parameter-number
+          %p 44
+        %p.profile__parameter-name 投稿
+      .profile__parameter
+        .profile__parameter-number
+          %p 110
+          %p.profile__parameter-name フォロワー
+      .profile__parameter
+        .profile__parameter-number
+          %p 44
+        %p.profile__parameter-name フォロー中
+
+  .profile__post-container
+    - @posts.each do |post|
+      = link_to post_path(post) do
+        = image_tag post.image, class: 'profile__post'

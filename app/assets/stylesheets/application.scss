@@ -25,6 +25,8 @@
 @import 'login_form';
 @import 'variable';
 @import 'flash';
+@import 'profile';
+
 // 共通css
 html {
   font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
@@ -41,9 +43,12 @@ a {
   color: black;
 }
 
-a,
+a:hover {
+  opacity: 0.7;
+}
+
 button:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 img {
