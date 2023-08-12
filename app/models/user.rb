@@ -27,6 +27,7 @@ class User < ApplicationRecord
   validates :account, length: {minimum: 6}, uniqueness: true
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_one :profile, dependent: :destroy
 
   def prepare_profile
