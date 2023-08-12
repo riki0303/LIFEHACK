@@ -22,16 +22,23 @@
   text-align: left;
 }
 
-.profile__edit-btn {
+.profile__btn {
   margin-top: 10px;
   font-size: 14px;
   text-align: center;
 }
 
-.profile__edit {
+.profile__link {
   border: 1px solid black;
   padding: 5px 8px;
   border-radius: 5px;
+}
+
+.profile__link--edit {
+  background-color: black;
+  color: $color-white;
+  padding: 8px 15px;
+  border-radius: 20px;
 }
 
 .profile__parameter-container {
