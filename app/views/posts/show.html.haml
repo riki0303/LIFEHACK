@@ -7,3 +7,13 @@
   = link_to new_post_comment_path(@post) do
     %button.post__comment-btn.button-primary
       %p コメント追加
+  
+  .comment
+    - @comments.each do |comment|
+      .comment__item
+        .comment__left
+          = link_to account_path(comment.user_id), class: 'comment__avatar-container' do
+            = display_profile_avatar(comment.user.profile, 'comment__avatar')
+        .comment__right
+          %p.comment__account= comment.user.account
+          %p.comment__content= comment.content
