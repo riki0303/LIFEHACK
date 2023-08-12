@@ -15,7 +15,7 @@
 #  index_comments_on_user_id  (user_id)
 #
 class Comment < ApplicationRecord
-  validates :content, presence: true
+  validates :content, presence: true, length: { maximum: 140 }
 
   belongs_to :user
   belongs_to :post
