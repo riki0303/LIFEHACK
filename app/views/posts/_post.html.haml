@@ -16,7 +16,7 @@
 .post__btn-container
   .like-inactive
     = image_tag 'un-like.png'
-  = link_to image_tag('comment.png')
+  = link_to  image_tag('comment.png'), new_post_comment_path(post)
   = link_to image_tag('share.png'), 'https://twitter.com/share?'
 %h2.post__title
   = post.title

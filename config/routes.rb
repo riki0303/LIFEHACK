@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'homes#show'
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:new, :create, :destroy]
+  end
+
   resource :profile, only: [:show, :edit, :update]
   resources :accounts, only: [:show]
 end

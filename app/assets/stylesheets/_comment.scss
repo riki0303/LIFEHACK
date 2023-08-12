@@ -1,0 +1,47 @@
+@import 'variable';
+
+.comment {
+  .comment__item:first-of-type {
+    margin-top: 50px;
+  }
+}
+
+.comment__item {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+  position: relative;
+}
+
+.comment__avatar-container {
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+}
+
+.comment__avatar {
+  border-radius: 50%;
+}
+
+.comment__content {
+  color: $color-gray;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.comment__textarea-container {
+  position: relative;
+}
+
+.comment__btn {
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  left: 15px;
+  top: 60px;
+}
+
+.comment__destory-link {
+  position: absolute;
+  right: 5px;
+}

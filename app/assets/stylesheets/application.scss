@@ -26,10 +26,15 @@
 @import 'variable';
 @import 'flash';
 @import 'profile';
+@import 'comment';
 
 // 共通css
 html {
   font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+}
+
+body {
+  margin-bottom: 20px;
 }
 
 .container {
