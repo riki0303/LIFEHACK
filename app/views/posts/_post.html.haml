@@ -1,5 +1,6 @@
 .post__head
-  = user_avatar(post)
+  = link_to account_path(post.user) do
+    = user_avatar(post)
   %p.post__account
     = post.user.account
   - if my_post?(current_user, post)
