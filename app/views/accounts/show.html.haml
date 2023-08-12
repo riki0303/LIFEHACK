@@ -1,1 +1,4 @@
-= @user.email
+= render 'commons/header', title: @user.account
+
+
+= render 'commons/profile', profile: @profile, posts: @posts
