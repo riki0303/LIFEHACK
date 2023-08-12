@@ -11,6 +11,9 @@
   .comment
     - @comments.each do |comment|
       .comment__item
+        - if comment.user == current_user
+          = link_to post_comment_path(@post,comment.id), method: :delete ,data: { confirm: '削除して宜しいですか？' } , class: 'comment__destory-link' do
+            %i.fa-regular.fa-circle-xmark
         .comment__left
           = link_to account_path(comment.user_id), class: 'comment__avatar-container' do
             = display_profile_avatar(comment.user.profile, 'comment__avatar')

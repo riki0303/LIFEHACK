@@ -20,7 +20,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy!
 
+    post = Post.find(params[:post_id])
+    redirect_to post_path(post), notice: '削除出来ました'
   end
 
   private

@@ -10,23 +10,23 @@
   margin-top: 32px;
   display: flex;
   gap: 16px;
+  position: relative;
 }
 
 .comment__avatar-container {
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 }
 
 .comment__avatar {
-  // width: 32px;
-  // height: 32px;
   border-radius: 50%;
 }
 
 .comment__content {
   color: $color-gray;
   font-size: 14px;
+  margin-top: 5px;
 }
 
 .comment__textarea-container {
@@ -39,4 +39,9 @@
   position: absolute;
   left: 15px;
   top: 60px;
+}
+
+.comment__destory-link {
+  position: absolute;
+  right: 5px;
 }
