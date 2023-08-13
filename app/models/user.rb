@@ -34,8 +34,4 @@ class User < ApplicationRecord
   def prepare_profile
     profile || build_profile
   end
-
-  def has_liked?(post)
-    likes.exists?(post_id: post.id)
-  end
 end

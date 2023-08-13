@@ -15,7 +15,7 @@
   = image_tag post.image
 .post__btn-container
   .like
-    - if current_user.has_liked?(post)
+    - if has_liked?(current_user,post)
       = image_tag 'like.png'
     - else
       = link_to post_like_path(post), method: :post do
