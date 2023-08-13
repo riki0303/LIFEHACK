@@ -3,14 +3,12 @@ class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.build
-    @comment.user_id = current_user.id
+    @comment = @post.comments.build(user_id: current_user.id)
   end
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
-    @comment.user_id = current_user.id
+    @comment = @post.comments.build(comment_params.merge(user_id: current_user.id))
 
     if @comment.save
       redirect_to post_path(@post), notice: 'コメント出来ました'

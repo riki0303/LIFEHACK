@@ -14,9 +14,16 @@
 = link_to post_path(post), class: 'post__image' do
   = image_tag post.image
 .post__btn-container
-  .like-inactive
-    = image_tag 'un-like.png'
+  .like
+    - if has_liked?(current_user,post)
+      = link_to post_like_path(post), method: :delete do
+        = image_tag 'like.png'
+    - else
+      = link_to post_like_path(post), method: :post do
+        = image_tag 'un-like.png'
+  .post__count= likes_count(post)
   = link_to  image_tag('comment.png'), new_post_comment_path(post)
+  .post__count= comments_count(post)
   = link_to image_tag('share.png'), 'https://twitter.com/share?'
 %h2.post__title
   = post.title
