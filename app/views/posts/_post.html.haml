@@ -16,7 +16,8 @@
 .post__btn-container
   .like
     - if has_liked?(current_user,post)
-      = image_tag 'like.png'
+      = link_to post_like_path(post), method: :delete do
+        = image_tag 'like.png'
     - else
       = link_to post_like_path(post), method: :post do
         = image_tag 'un-like.png'

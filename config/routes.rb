@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'homes#show'
   resources :posts do
     resources :comments, only: [:new, :create, :destroy]
-    resource :like ,only: [:create]
+    resource :like ,only: [:create, :destroy]
   end
 
   resource :profile, only: [:show, :edit, :update]
