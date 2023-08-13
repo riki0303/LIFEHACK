@@ -11,7 +11,7 @@
   .comment
     - @comments.each do |comment|
       .comment__item
-        - if comment.user == current_user
+        - if my_comment?(comment)
           = link_to post_comment_path(@post,comment.id), method: :delete ,data: { confirm: '削除して宜しいですか？' } , class: 'comment__destory-link' do
             %i.fa-regular.fa-circle-xmark
         .comment__left
