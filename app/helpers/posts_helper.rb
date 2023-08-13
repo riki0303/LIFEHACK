@@ -12,4 +12,8 @@ module PostsHelper
       image_tag 'noavatar.png', class: 'post__avatar'
     end
   end
+
+  def my_comment?(comment)
+    comment.user == current_user
+  end
 end
