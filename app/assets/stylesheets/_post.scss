@@ -61,10 +61,16 @@
   margin-top: 20px;
   display: flex;
   gap: 15px;
+  align-items: center;
   img {
     width: 22px;
-    height: 21px;
+    height: 20px;
   }
+}
+
+.post__count {
+  font-size: 14px;
+  margin-left: -10px;
 }
 
 .post__title {

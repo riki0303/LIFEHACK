@@ -21,7 +21,9 @@
     - else
       = link_to post_like_path(post), method: :post do
         = image_tag 'un-like.png'
+  .post__count= likes_count(post)
   = link_to  image_tag('comment.png'), new_post_comment_path(post)
+  .post__count= comments_count(post)
   = link_to image_tag('share.png'), 'https://twitter.com/share?'
 %h2.post__title
   = post.title
