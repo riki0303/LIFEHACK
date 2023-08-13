@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :like ,only: [:create, :destroy]
   end
 
+  resources :favorites, only: [:index]
   resource :profile, only: [:show, :edit, :update]
   resources :accounts, only: [:show]
 end

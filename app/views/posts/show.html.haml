@@ -2,7 +2,7 @@
 
 .container
   .post
-    = render 'post', post: @post
+    = render 'commons/post', post: @post
 
   = link_to new_post_comment_path(@post) do
     %button.post__comment-btn.button-primary

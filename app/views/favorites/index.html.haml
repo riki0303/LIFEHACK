@@ -1,0 +1,7 @@
+= render 'commons/header', title: 'いいね一覧'
+
+.container
+  .post
+    - @posts.each do |post|
+      .post__item
+        = render 'commons/post', post: post
