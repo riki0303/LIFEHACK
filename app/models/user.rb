@@ -32,7 +32,15 @@ class User < ApplicationRecord
   has_many :favorites, through: :likes, source: :post
   has_one :profile, dependent: :destroy
 
+  has_many :following_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  has_many :followings, through: :following_relationships, source: :following
+
   def prepare_profile
     profile || build_profile
   end
+
+  def follow!(user)
+    following_relationships.create!(following_id: user.id)
+  end
 end
+
