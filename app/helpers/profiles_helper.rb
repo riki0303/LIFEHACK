@@ -6,4 +6,6 @@ module ProfilesHelper
       image_tag 'noavatar.png', class: css_class
     end
   end
+
+
 end
