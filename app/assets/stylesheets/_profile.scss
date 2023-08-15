@@ -29,15 +29,20 @@
 }
 
 .profile__link {
-  border: 1px solid black;
-  padding: 5px 8px;
-  border-radius: 5px;
+  padding: 8px 15px;
 }
 
-.profile__link--edit {
+.profile__link--unfollow {
+  background-color: $color-white;
+  color: black;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.profile__link--follow {
   background-color: black;
   color: $color-white;
-  padding: 8px 15px;
+  border: 1px solid black;
   border-radius: 20px;
 }
 
