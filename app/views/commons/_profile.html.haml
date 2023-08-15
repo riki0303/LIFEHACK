@@ -8,7 +8,7 @@
 
   - if @user == current_user
     .profile__btn
-      = link_to '編集する', edit_profile_path , class: 'profile__link'
+      = link_to '編集する', edit_profile_path , class: 'profile__link profile__link--unfollow'
   - else
     .profile__btn.profile__btn--follow
       - if current_user&.has_followed?(user)
