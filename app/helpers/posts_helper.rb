@@ -4,9 +4,9 @@ module PostsHelper
   end
 
   def user_avatar(post)
-    user_avatar = post.user.profile.avatar
+    user_avatar = post.user.profile&.avatar
 
-    if user_avatar.attached?
+    if user_avatar.present?
       image_tag user_avatar , class: 'post__avatar'
     else
       image_tag 'noavatar.png', class: 'post__avatar'
