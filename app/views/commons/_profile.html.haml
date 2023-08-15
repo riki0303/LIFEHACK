@@ -12,7 +12,7 @@
   - else
     .profile__btn.profile__btn--follow
       - if current_user&.has_followed?(user)
-        = link_to 'アンフォロー', account_follows_path(user), method: :post , class: 'profile__link profile__link--edit'
+        = link_to 'アンフォロー', account_unfollows_path(user), method: :post , class: 'profile__link profile__link--edit'
       - else
         = link_to 'フォロー', account_follows_path(user), method: :post , class: 'profile__link profile__link--edit'
     .profile__parameter-container
