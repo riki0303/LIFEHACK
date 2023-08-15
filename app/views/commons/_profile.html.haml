@@ -15,19 +15,20 @@
         = link_to 'フォロー解除', account_unfollows_path(user), method: :post ,data: { confirm: 'フォロー解除して宜しいですか？' }, class: 'profile__link profile__link--unfollow'
       - else
         = link_to 'フォロー', account_follows_path(user), method: :post , class: 'profile__link profile__link--follow'
-    .profile__parameter-container
-      .profile__parameter
-        .profile__parameter-number
-          %p 44
-        %p.profile__parameter-name 投稿
-      .profile__parameter
-        .profile__parameter-number
-          %p 110
-          %p.profile__parameter-name フォロワー
-      .profile__parameter
-        .profile__parameter-number
-          %p 44
-        %p.profile__parameter-name フォロー中
+
+  .profile__parameter-container
+    .profile__parameter
+      .profile__parameter-number
+        %p 44
+      %p.profile__parameter-name 投稿
+    .profile__parameter
+      .profile__parameter-number
+        %p 110
+        %p.profile__parameter-name フォロワー
+    .profile__parameter
+      .profile__parameter-number
+        %p 44
+      %p.profile__parameter-name フォロー中
 
   .profile__post-container
     - posts.each do |post|
