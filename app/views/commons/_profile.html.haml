@@ -11,8 +11,10 @@
       = link_to '編集する', edit_profile_path , class: 'profile__link'
   - else
     .profile__btn.profile__btn--follow
-      = link_to 'フォロー', '#', class: 'profile__link profile__link--edit'
-
+      - if current_user&.has_followed?(user)
+        = link_to 'アンフォロー', account_follows_path(user), method: :post , class: 'profile__link profile__link--edit'
+      - else
+        = link_to 'フォロー', account_follows_path(user), method: :post , class: 'profile__link profile__link--edit'
     .profile__parameter-container
       .profile__parameter
         .profile__parameter-number
