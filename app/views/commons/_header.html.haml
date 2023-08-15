@@ -7,18 +7,19 @@
       %h1.header__title
         = title
       .header__right
-        %i.fa-solid.fa-ellipsis.fa-lg.header__tab
-          %nav.header__nav
-            .header__nav-item
-              = link_to 'ホーム', posts_path, class: 'header__nav-link'
-            .header__nav-item
-              = link_to '新規投稿', new_post_path, class: 'header__nav-link'
-            .header__nav-item
-              = link_to 'プロフィール', profile_path, class: 'header__nav-link'
-            .header__nav-item
-              = link_to 'いいね一覧', favorites_path, class: 'header__nav-link'
-            .header__nav-item
-              = link_to 'ログアウト', destroy_user_session_path, class: 'header__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
+        - if user_signed_in?
+          %i.fa-solid.fa-ellipsis.fa-lg.header__tab
+            %nav.header__nav
+              .header__nav-item
+                = link_to 'ホーム', posts_path, class: 'header__nav-link'
+              .header__nav-item
+                = link_to '新規投稿', new_post_path, class: 'header__nav-link'
+              .header__nav-item
+                = link_to 'プロフィール', profile_path, class: 'header__nav-link'
+              .header__nav-item
+                = link_to 'いいね一覧', favorites_path, class: 'header__nav-link'
+              .header__nav-item
+                = link_to 'ログアウト', destroy_user_session_path, class: 'header__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }
 
 
 - if flash.present?
