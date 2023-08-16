@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resource :like ,only: [:create, :destroy]
   end
 
+  resource :timeline, only: [:show]
+
   resources :favorites, only: [:index]
   resource :profile, only: [:show, :edit, :update]
 
