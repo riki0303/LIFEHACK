@@ -19,15 +19,15 @@
   .profile__parameter-container
     .profile__parameter
       .profile__parameter-number
-        %p 44
+        = @user.posts.count
       %p.profile__parameter-name 投稿
     = link_to account_followers_path(user), class: 'profile__parameter' do
       .profile__parameter-number
-        %p 110
+        = @user.follower.count
         %p.profile__parameter-name フォロワー
     = link_to account_followings_path(user), class: 'profile__parameter' do
       .profile__parameter-number
-        %p 44
+        = @user.followings.count
       %p.profile__parameter-name フォロー中
 
   .profile__post-container
