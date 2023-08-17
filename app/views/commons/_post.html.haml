@@ -1,7 +1,7 @@
 .post__head
   = link_to account_path(post.user) do
     = user_avatar(post)
-  %p.post__account
+  = link_to account_path(post.user) do
     = post.user.account
   - if my_post?(current_user, post)
     %i.fa-regular.fa-pen-to-square.post__tab
