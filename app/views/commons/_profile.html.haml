@@ -21,11 +21,11 @@
       .profile__parameter-number
         %p 44
       %p.profile__parameter-name 投稿
-    .profile__parameter
+    = link_to account_followers_path(user), class: 'profile__parameter' do
       .profile__parameter-number
         %p 110
         %p.profile__parameter-name フォロワー
-    .profile__parameter
+    = link_to account_followings_path(user), class: 'profile__parameter' do
       .profile__parameter-number
         %p 44
       %p.profile__parameter-name フォロー中
