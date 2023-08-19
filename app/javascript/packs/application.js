@@ -18,7 +18,7 @@ import axios from 'axios';
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   $('.header').on('click', () => {
     axios.get('/').then((res) => {
       console.log(res);
