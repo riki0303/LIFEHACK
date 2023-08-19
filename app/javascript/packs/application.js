@@ -9,6 +9,7 @@ require('@rails/activestorage').start();
 require('channels');
 
 import $ from 'jquery';
+import axios from 'axios';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -18,7 +19,9 @@ import $ from 'jquery';
 // const imagePath = (name) => images(name, true)
 
 document.addEventListener('DOMContentLoaded', () => {
-  $('.title').on('click', () => {
-    window.alert('CLICKED');
+  $('.header').on('click', () => {
+    axios.get('/').then((res) => {
+      console.log(res);
+    });
   });
 });
