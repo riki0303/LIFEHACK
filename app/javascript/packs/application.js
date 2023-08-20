@@ -8,7 +8,7 @@ require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
 
-import $ from 'jquery';
+import $, { data } from 'jquery';
 import axios from 'axios';
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -19,9 +19,14 @@ import axios from 'axios';
 // const imagePath = (name) => images(name, true)
 
 document.addEventListener('turbolinks:load', () => {
-  $('.header').on('click', () => {
-    axios.get('/').then((res) => {
-      console.log(res);
-    });
+  const dataset = $('#post-show').data();
+  const postId = dataset.postId;
+  axios.get(`/posts/${postId}/like`).then((res) => {
+    const hasLiked = res.data.hasLiked;
+    if (hasLiked) {
+      $('.active-heart').removeClass('hidden');
+    } else {
+      $('.inactive-heart').removeClass('hidden');
+    }
   });
 });

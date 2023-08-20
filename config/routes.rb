@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'homes#show'
 
   resources :posts do
-    resource :like ,only: [:create, :destroy]
+    resource :like ,only: [:show,:create, :destroy]
     resources :comments, only: [:new, :create, :destroy]
   end
 
