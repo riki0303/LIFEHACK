@@ -11,56 +11,73 @@ axios.defaults.headers.common['X-CSRF-Token'] = csrfToken();
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-const handleHeartDisplay = (hasLiked) => {
-  if (hasLiked) {
-    $('.like__active-heart').removeClass('hidden');
-  } else {
-    $('.like__inactive-heart').removeClass('hidden');
-  }
-};
-
 // 画面ロード後
 document.addEventListener('DOMContentLoaded', () => {
-  const dataset = $('#post-show').data();
-  const postId = dataset.postId;
+  // show いいねされているハートを取得
+  $('.like__active-heart').each(function (index, element) {
+    const dataset = $(element).data();
+    const postId = dataset.postId;
 
-  // いいねの表示
-  axios.get(`/posts/${postId}/like`).then((res) => {
-    const hasLiked = res.data.hasLiked;
-    handleHeartDisplay(hasLiked);
+    axios.get(`/posts/${postId}/like`).then((res) => {
+      const hasLiked = res.data.hasLiked;
+      if (hasLiked === true) {
+        $(element).removeClass('hidden');
+      }
+    });
   });
 
-  // いいねする
-  $('.like__inactive-heart').on('click', () => {
+  // show いいねされていないハートを取得
+  $('.like__inactive-heart').each(function (index, element) {
+    const dataset = $(element).data();
+    const postId = dataset.postId;
+
+    axios.get(`/posts/${postId}/like`).then((res) => {
+      const hasLiked = res.data.hasLiked;
+      if (hasLiked === false) {
+        $(element).removeClass('hidden');
+      }
+    });
+  });
+
+  // create いいねする
+  $('.like__inactive-heart').on('click', (e) => {
+    e.preventDefault();
+    const dataset = $(e.currentTarget).data();
+    const postId = dataset.postId;
     axios
       .post(`/posts/${postId}/like`)
       .then((res) => {
         if (res.data.status === 'ok') {
-          $('.like__active-heart').removeClass('hidden');
-          $('.like__inactive-heart').addClass('hidden');
+          $(`#like__active-heart${postId}`).removeClass('hidden');
+          $(`#like__inactive-heart${postId}`).addClass('hidden');
           // いいね数表示
-          $('.like-count-js').text(res.data.likesCount);
+          $(`#like-count-js${postId}`).text(res.data.likesCount);
         }
       })
       .catch((e) => {
         window.alert('e');
+        console.log(e);
       });
   });
 
-  // いいね解除;
-  $('.like__active-heart').on('click', () => {
+  // destroy いいね解除;
+  $('.like__active-heart').on('click', (e) => {
+    e.preventDefault();
+    const dataset = $(e.currentTarget).data();
+    const postId = dataset.postId;
     axios
       .delete(`/posts/${postId}/like`)
       .then((res) => {
         if (res.data.status === 'ok') {
-          $('.like__active-heart').addClass('hidden');
-          $('.like__inactive-heart').removeClass('hidden');
+          $(`#like__active-heart${postId}`).addClass('hidden');
+          $(`#like__inactive-heart${postId}`).removeClass('hidden');
           // いいね数表示
-          $('.like-count-js').text(res.data.likesCount);
+          $(`#like-count-js${postId}`).text(res.data.likesCount);
         }
       })
       .catch((e) => {
         window.alert('e');
+        console.log(e);
       });
   });
 });
