@@ -10,6 +10,9 @@ require('channels');
 
 import $, { data } from 'jquery';
 import axios from 'axios';
+import { csrfToken } from 'rails-ujs';
+
+axios.defaults.headers.common['X-CSRF-Token'] = csrfToken();
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -20,17 +23,43 @@ import axios from 'axios';
 
 const handleHeartDisplay = (hasLiked) => {
   if (hasLiked) {
-    $('.active-heart').removeClass('hidden');
+    $('.like__active-heart').removeClass('hidden');
   } else {
-    $('.inactive-heart').removeClass('hidden');
+    $('.like__inactive-heart').removeClass('hidden');
   }
 };
 
+// いいねの表示
 document.addEventListener('turbolinks:load', () => {
   const dataset = $('#post-show').data();
   const postId = dataset.postId;
+
   axios.get(`/posts/${postId}/like`).then((res) => {
     const hasLiked = res.data.hasLiked;
     handleHeartDisplay(hasLiked);
+  });
+
+  // いいねする
+  $('.like__inactive-heart').on('click', () => {
+    axios
+      .post(`/posts/${postId}/like`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        window.alert('e');
+      });
+  });
+
+  // いいね解除;
+  $('.like__active-heart').on('click', () => {
+    axios
+      .delete(`/posts/${postId}/like`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((e) => {
+        window.alert('e');
+      });
   });
 });

@@ -16,10 +16,10 @@
     = image_tag post.image
   .post__btn-container
     .like
-      = link_to post_like_path(post), method: :delete, class: 'hidden active-heart' do
-        = image_tag 'heart-active.png'
-      = link_to post_like_path(post), method: :post, class: 'hidden inactive-heart' do
-        = image_tag 'heart.png'
+      .hidden.like__active-heart
+        = image_tag 'active-heart.png'
+      .hidden.like__inactive-heart
+        = image_tag 'inactive-heart.png'
     .post__count= likes_count(post)
     = link_to  image_tag('comment.png'), new_post_comment_path(post)
     .post__count= comments_count(post)
