@@ -7,7 +7,7 @@
   = link_to new_post_comment_path(@post) do
     %button.post__comment-btn.button-primary
       %p コメント追加
-  
+
   .comment
     - @comments.each do |comment|
       .comment__item
@@ -20,3 +20,6 @@
         .comment__right
           %p.comment__account= comment.user.account
           %p.comment__content= comment.content
+
+
+= javascript_pack_tag 'post'
