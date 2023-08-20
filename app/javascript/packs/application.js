@@ -18,15 +18,19 @@ import axios from 'axios';
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+const handleHeartDisplay = (hasLiked) => {
+  if (hasLiked) {
+    $('.active-heart').removeClass('hidden');
+  } else {
+    $('.inactive-heart').removeClass('hidden');
+  }
+};
+
 document.addEventListener('turbolinks:load', () => {
   const dataset = $('#post-show').data();
   const postId = dataset.postId;
   axios.get(`/posts/${postId}/like`).then((res) => {
     const hasLiked = res.data.hasLiked;
-    if (hasLiked) {
-      $('.active-heart').removeClass('hidden');
-    } else {
-      $('.inactive-heart').removeClass('hidden');
-    }
+    handleHeartDisplay(hasLiked);
   });
 });
