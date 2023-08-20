@@ -38,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.data.status === 'ok') {
           $('.like__active-heart').removeClass('hidden');
           $('.like__inactive-heart').addClass('hidden');
-          $('.like-count-js').text(res.data.likeCount);
+          // いいね数表示
+          $('.like-count-js').text(res.data.likesCount);
         }
       })
       .catch((e) => {
@@ -54,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.data.status === 'ok') {
           $('.like__active-heart').addClass('hidden');
           $('.like__inactive-heart').removeClass('hidden');
-          $('.like-count-js').text(res.data.likeCount);
+          // いいね数表示
+          $('.like-count-js').text(res.data.likesCount);
         }
       })
       .catch((e) => {
