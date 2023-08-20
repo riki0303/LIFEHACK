@@ -19,11 +19,12 @@ const handleHeartDisplay = (hasLiked) => {
   }
 };
 
-// いいねの表示
+// 画面ロード後
 document.addEventListener('DOMContentLoaded', () => {
   const dataset = $('#post-show').data();
   const postId = dataset.postId;
 
+  // いいねの表示
   axios.get(`/posts/${postId}/like`).then((res) => {
     const hasLiked = res.data.hasLiked;
     handleHeartDisplay(hasLiked);
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.data.status === 'ok') {
           $('.like__active-heart').removeClass('hidden');
           $('.like__inactive-heart').addClass('hidden');
+          $('.like-count-js').text(res.data.likeCount);
         }
       })
       .catch((e) => {
@@ -52,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.data.status === 'ok') {
           $('.like__active-heart').addClass('hidden');
           $('.like__inactive-heart').removeClass('hidden');
+          $('.like-count-js').text(res.data.likeCount);
         }
       })
       .catch((e) => {

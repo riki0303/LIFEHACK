@@ -20,7 +20,7 @@
         = image_tag 'active-heart.png'
       .hidden.like__inactive-heart
         = image_tag 'inactive-heart.png'
-    .post__count= likes_count(post)
+    .post__count.like-count-js= display_likes_count(post)
     = link_to  image_tag('comment.png'), new_post_comment_path(post)
     .post__count= comments_count(post)
     = link_to image_tag('share.png'), 'https://twitter.com/share?'
