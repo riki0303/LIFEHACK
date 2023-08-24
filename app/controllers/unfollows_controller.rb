@@ -3,6 +3,9 @@ class UnfollowsController < ApplicationController
 
   def create
     current_user.unfollow!(params[:account_id])
-    redirect_to account_path(params[:account_id])
+
+    user = User.find(params[:account_id])
+    followers_count = user.follower_relationships.count
+    render json: { status: 'ok', followersCount: followers_count }
   end
 end
