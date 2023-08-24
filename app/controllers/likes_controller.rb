@@ -12,9 +12,9 @@ class LikesController < ApplicationController
     post = Post.find(params[:post_id])
     post.likes.create!(user_id: current_user.id)
 
-    like_count = post.likes.count
+    likes_count = post.likes.count
 
-    render json: { status: 'ok', likesCount: like_count  }
+    render json: { status: 'ok', likesCount: likes_count  }
   end
 
   def destroy
