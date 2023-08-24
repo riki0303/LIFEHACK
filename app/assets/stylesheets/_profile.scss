@@ -29,7 +29,9 @@
 }
 
 .profile__link {
+  display: inline-block;
   padding: 8px 15px;
+  cursor: pointer;
 }
 
 .profile__link--unfollow {
