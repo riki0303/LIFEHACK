@@ -23,7 +23,7 @@
     = display_likes_count(post)
   = link_to  image_tag('comment.png'), new_post_comment_path(post)
   .post__count= comments_count(post)
-  = link_to image_tag('share.png'), 'https://twitter.com/share?'
+  = link_to image_tag('share.png'), "https://twitter.com/share?url=#{ request.url }&text=#{ post.title }%0a%0a#{ post.content }", target: '_blank'
 %h2.post__title
   = post.title
 %p.post__content
