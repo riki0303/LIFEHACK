@@ -12,5 +12,8 @@
         = f.text_area :content, autofocus: true, placeholder: '投稿内容', class: 'form__field'
       .form__item
         = f.file_field :image
+      #form__new-image
+      - if post.image.attached?
+        = image_tag post.image, class: 'form__new-image'
       %button.form__button.button-primary
         = f.submit "投稿する"
