@@ -18,7 +18,8 @@
           = link_to account_path(comment.user_id), class: 'comment__avatar-container' do
             = display_profile_avatar(comment.user.profile, 'comment__avatar')
         .comment__right
-          %p.comment__account= comment.user.account
+          = link_to account_path(comment.user_id) do
+            %p.comment__account= comment.user.account
           %p.comment__content= comment.content
 
 
