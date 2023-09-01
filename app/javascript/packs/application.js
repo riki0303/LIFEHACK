@@ -9,3 +9,4 @@ require('@rails/activestorage').start();
 require('channels');
 require('./follow');
 require('./like');
+require('./preview');
