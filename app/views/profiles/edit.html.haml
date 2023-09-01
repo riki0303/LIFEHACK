@@ -14,5 +14,8 @@
         = f.text_area :bio, autofocus: true, placeholder: '自己紹介', class: 'form__field'
       .form__item
         = f.file_field :avatar
+      #form__new-image
+      - if @profile.avatar.attached?
+        = image_tag @profile.avatar, class: 'form__new-image'
       %button.form__button.button-primary
         = f.submit "更新する"
