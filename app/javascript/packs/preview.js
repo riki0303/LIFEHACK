@@ -1,4 +1,3 @@
-import axios from 'axios';
 // jQuery未使用
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,8 +11,33 @@ document.addEventListener('DOMContentLoaded', () => {
     imageElement.appendChild(blobImage);
   };
 
-  // 画像を選択した時
+  // 投稿画像を選択した時
   document.getElementById('post_image').addEventListener('change', (e) => {
+    const imageContent = document.querySelector('img');
+
+    if (imageContent) {
+      imageContent.remove();
+    }
+
+    const file = e.target.files[0];
+    const blob = window.URL.createObjectURL(file);
+    createImageHTML(blob);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const createImageHTML = (blob) => {
+    const imageElement = document.getElementById('form__new-image');
+
+    const blobImage = document.createElement('img');
+    blobImage.setAttribute('class', 'form__new-image');
+    blobImage.setAttribute('src', blob);
+
+    imageElement.appendChild(blobImage);
+  };
+
+  // 投稿画像を選択した時
+  document.getElementById('profile_avatar').addEventListener('change', (e) => {
     const imageContent = document.querySelector('img');
 
     if (imageContent) {
