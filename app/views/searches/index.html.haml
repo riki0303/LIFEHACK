@@ -1,0 +1,13 @@
+= render 'commons/header', title: '検索'
+
+.container
+  = search_form_for @q_posts,url:searches_path do |f|
+    = f.search_field :title_cont,required: true
+    = f.submit "投稿検索"
+
+
+  - if @posts.present?
+    .post
+      - @posts.each do |post|
+        .post__item
+          = render 'commons/post', post: post
