@@ -4,13 +4,3 @@
       = f.search_field :title_or_content_cont,required: true, placeholder: '検索キーワードを入力', class: 'search-form__field'
     %button.button-primary.search-form__button
       = f.submit "検索"
-
-- if posts.present?
-  .post
-    - posts.each do |post|
-      .post__item
-        = render 'commons/post', post: post
-- elsif posts == [] && q.conditions.present?
-  %p 検索結果がありません。
-- else
-  %p 検索キーワードを入力してください。
