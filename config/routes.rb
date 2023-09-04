@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :posts do
     resource :like ,only: [:show,:create, :destroy]
     resources :comments, only: [:new, :create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 
   resource :timeline, only: [:show]
@@ -21,5 +24,5 @@ Rails.application.routes.draw do
     resources :followers, only: %i[index]
   end
 
-  resources :searches, only: [:index]
+  resources :searches, only:[:index]
 end

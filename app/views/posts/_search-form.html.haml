@@ -1,0 +1,6 @@
+= search_form_for q,url:search_posts_path do |f|
+  .search-form
+    .search-form__item
+      = f.search_field :title_or_content_cont,required: true, placeholder: '検索キーワードを入力', class: 'search-form__field'
+    %button.button-primary.search-form__button
+      = f.submit "検索"

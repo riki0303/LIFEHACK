@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order(id: 'DESC')
+    @q = Post.ransack(params[:q])
   end
 
   def show
@@ -41,6 +42,15 @@ class PostsController < ApplicationController
     post = current_user.posts.find(params[:id])
     post.destroy!
     redirect_to posts_path, notice: '削除出来ました'
+  end
+
+  def search
+    @q = Post.ransack(params[:q])
+    if params[:q].present?
+      @posts = @q.result(distinct: true).order(id: 'DESC')
+    else
+      @posts = Post.none # 空の結果を設定
+    end
   end
 
   private

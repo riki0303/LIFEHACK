@@ -19,6 +19,8 @@
               .header__nav-item
                 = link_to 'プロフィール', profile_path, class: 'header__nav-link'
               .header__nav-item
+                = link_to 'ユーザー検索', searches_path, class: 'header__nav-link'
+              .header__nav-item
                 = link_to 'いいね一覧', favorites_path, class: 'header__nav-link'
               .header__nav-item
                 = link_to 'ログアウト', destroy_user_session_path, class: 'header__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' }

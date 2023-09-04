@@ -1,0 +1,15 @@
+= render 'commons/header', title: '投稿検索'
+
+.container
+  = render 'search-form', title: '投稿検索', q:@q, posts:@posts
+
+  - if @posts.present?
+    .post
+      - @posts.each do |post|
+        .post__item
+          = render 'commons/post', post: post
+  - elsif @posts == [] && @q.conditions.present?
+    %p 検索結果がありませんでした。
+  - else
+    %p 検索キーワードを入力してください。
+

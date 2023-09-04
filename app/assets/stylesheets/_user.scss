@@ -1,23 +1,23 @@
 @import 'variable';
 
-.follow__item {
+.user__item {
   margin-top: 30px;
   display: flex;
   gap: 20px;
 }
 
-.follow__right {
+.user__right {
   align-self: center;
   display: block;
   width: 100%;
 }
 
-.follow__avatar {
+.user__avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-.follow__account {
+.user__account {
   color: black;
   display: block;
 }

@@ -2,11 +2,11 @@
 
 
 .container
+  = render 'search-form', title: '投稿検索', q:@q, posts:@posts
+
   .post
     - @posts.each do |post|
       .post__item
         = render 'commons/post', post: post
-
-
 
 
