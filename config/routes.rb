@@ -23,4 +23,6 @@ Rails.application.routes.draw do
     resources :followings, only: %i[index]
     resources :followers, only: %i[index]
   end
+
+  resources :searches, only:[:index]
 end
