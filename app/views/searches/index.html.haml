@@ -9,8 +9,15 @@
         = f.submit "検索"
 
   - if @users.present?
+    .user
     - @users.each do |user|
-      = user.account
+      .user__item
+        .user__left
+          = link_to account_path(user.id) do
+            = display_profile_avatar(user.profile, 'user__avatar')
+        .user__right
+          = link_to account_path(user.id), class: 'user__account' do
+            = user.account
   - elsif @users == [] && @q.conditions.present?
     %p 検索結果がありません。
   - else
