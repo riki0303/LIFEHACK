@@ -4,7 +4,7 @@
   = search_form_for @q,url:searches_path do |f|
     .search-form
       .search-form__item
-        = f.search_field :account_or_email_or_profile_name_cont,required: true, placeholder: '検索キーワードを入力', class: 'search-form__field'
+        = f.search_field :account_or_email_or_profile_name_cont,required: true, placeholder: '名前・アカウント・メールアドレス', class: 'search-form__field'
       %button.button-primary.search-form__button
         = f.submit "検索"
 
