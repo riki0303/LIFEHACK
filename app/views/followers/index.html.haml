@@ -1,12 +1,12 @@
 = render 'commons/header', title: 'フォロワー'
 
 .container
-  .follow
+  .user
   - @followers.each do |follower|
-    .follow__item
-      .follow__left
+    .user__item
+      .user__left
         = link_to account_path(follower.id) do
-          = display_profile_avatar(follower.profile, 'follow__avatar')
-      .follow__right
-        = link_to account_path(follower.id), class: 'follow__account' do
+          = display_profile_avatar(follower.profile, 'user__avatar')
+      .user__right
+        = link_to account_path(follower.id), class: 'user__account' do
           = follower.account
