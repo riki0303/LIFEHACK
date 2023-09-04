@@ -1,5 +1,4 @@
-= render 'commons/header', title: 'LIFEHACK'
-
+= render 'commons/header', title: '投稿検索'
 
 .container
   = search_form_for @q,url:search_posts_path do |f|
@@ -15,16 +14,7 @@
         .post__item
           = render 'commons/post', post: post
   - elsif @posts == [] && @q.conditions.present?
-    %p 検索結果がありません。
+    %p 検索結果がありませんでした。
   - else
     %p 検索キーワードを入力してください。
-
-
-  .post
-    - @posts.each do |post|
-      .post__item
-        = render 'commons/post', post: post
-
-
-
 

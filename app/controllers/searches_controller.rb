@@ -2,9 +2,9 @@ class SearchesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @q_posts = Post.ransack(params[:q])
+    @q = Post.ransack(params[:q])
     if params[:q].present?
-      @posts = @q_posts.result(distinct: true)
+      @posts = @q.result(distinct: true).order(id: 'DESC')
     else
       @posts = Post.none # 空の結果を設定
     end
