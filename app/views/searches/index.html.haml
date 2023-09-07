@@ -18,6 +18,7 @@
         .user__right
           = link_to account_path(user.id), class: 'user__account' do
             = user.account
+    = paginate @users
   - elsif @users == [] && @q.conditions.present?
     %p 検索結果がありません。
   - else
