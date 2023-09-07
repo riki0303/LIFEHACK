@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.all.includes(user: { profile: :avatar_attachment }).with_attached_image.order(id: 'DESC')
+    @posts = Post.all.includes(user: { profile: :avatar_attachment }).with_attached_image.page(params[:page]).order(created_at: 'DESC')
     @q = Post.ransack(params[:q])
   end
 
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   def search
     @q = Post.ransack(params[:q])
     if params[:q].present?
-      @posts = @q.result(distinct: true).includes(user: { profile: :avatar_attachment }).with_attached_image.order(id: 'DESC')
+      @posts = @q.result(distinct: true).includes(user: { profile: :avatar_attachment }).with_attached_image.page(params[:page]).order(created_at: 'DESC')
     else
       @posts = Post.none # 空の結果を設定
     end

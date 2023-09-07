@@ -11,11 +11,12 @@
 }
 
 .form__button {
-  margin-top: 250px;
+  margin-top: 130px;
 }
 
 .form__new-image {
   margin-top: 15px;
   object-fit: cover;
-  height: 250px;
+  max-height: 250px;
+  border-radius: 5px;
 }

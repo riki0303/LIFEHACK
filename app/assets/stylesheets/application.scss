@@ -29,7 +29,7 @@
 @import 'comment';
 @import 'user';
 @import 'search-form';
-
+@import 'pagination';
 // 共通css
 html {
   font-family: 'Noto Sans', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
@@ -66,3 +66,4 @@ img {
 .hidden {
   display: none;
 }
+
