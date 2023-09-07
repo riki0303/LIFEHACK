@@ -8,6 +8,7 @@
       - @posts.each do |post|
         .post__item
           = render 'commons/post', post: post
+    = paginate @posts
   - elsif @posts == [] && @q.conditions.present?
     %p 検索結果がありませんでした。
   - else
