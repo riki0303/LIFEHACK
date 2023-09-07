@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @posts = Post.all.order(id: 'DESC')
+    @posts = Post.all.includes(user: { profile: :avatar_attachment }).with_attached_image.order(id: 'DESC')
     @q = Post.ransack(params[:q])
   end
 
