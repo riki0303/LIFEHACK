@@ -1,0 +1,35 @@
+// https://qiita.com/CoGee/items/78e8ecf65104afe50c09
+@import 'variable';
+
+.pagination {
+  margin: 30px auto 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  span {
+    text-align: center;
+    width: 25px;
+    :hover {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      :hover {
+        background-color: #f3f3f3;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+.current {
+  color: $color-blue;
+  font-weight: bold;
+}
+
+.gap {
+  background-color: white !important;
+}
