@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'annotate'
 gem 'hamlit'
+gem 'kaminari'
 gem 'meta-tags'
 gem 'ransack'
 
