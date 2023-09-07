@@ -32,7 +32,7 @@
   top: -15px;
   right: 0;
   z-index: 1;
-  width: 130px;
+  width: 150px;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
@@ -47,11 +47,13 @@
   font-size: 16px;
 }
 
-.header__nav:first-child {
-  margin-top: 10px;
+.header__nav-item:first-child {
+  margin-top: 8px;
 }
 
 .header__nav-link {
-  display: block;
-  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 10px;
 }
