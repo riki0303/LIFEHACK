@@ -8,7 +8,7 @@
 
   - if @user == current_user
     .profile__btn
-      = link_to '編集する', edit_profile_path , class: 'profile__link profile__link--unfollow'
+      = link_to '編集', edit_profile_path , class: 'profile__link profile__link--unfollow'
   - else
     .profile__btn.profile__btn--follow
       .profile__link.profile__link--unfollow.profile__link--unfollow-js.hidden
@@ -36,3 +36,4 @@
       = link_to post_path(post) do
         = image_tag post.image, class: 'profile__post'
 
+  = paginate posts

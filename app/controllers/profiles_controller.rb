@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   def show
     @user = current_user
     @profile = current_user.profile
-    @posts = current_user.posts.all.with_attached_image
+    @posts = current_user.posts.all.with_attached_image.page(params[:page]).per(30)
   end
 
   # new,create省略出来るが、profileが存在する場合と存在しない場合を意識して処理を書く必要がある
