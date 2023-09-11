@@ -1,0 +1,17 @@
+{
+  "name": "lifehack",
+  "description": "lifehack is a social networking service that can introduce useful items.",
+  "keywords": [],
+  "website": "",
+  "repository": "https://github.com/riki0303/LIFEHACK",
+  "env": {},
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
