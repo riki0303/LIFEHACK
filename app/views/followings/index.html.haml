@@ -11,3 +11,4 @@
         .user__right
           = link_to account_path(following.id), class: 'user__account' do
             = following.account
+  = paginate @followings
