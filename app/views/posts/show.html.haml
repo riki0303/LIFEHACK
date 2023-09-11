@@ -1,7 +1,8 @@
 = render 'commons/header', title: 'LIFEHACK'
 
-.container
-  .post
+.container.container--show
+  = render 'commons/aside'
+  .post.post--show
     = render 'commons/post', post: @post
 
   = link_to new_post_comment_path(@post) do

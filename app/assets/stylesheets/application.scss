@@ -15,6 +15,7 @@
  */
 
 @import 'reset';
+@import 'container';
 @import 'variable';
 @import 'arrow-left';
 @import 'button';
@@ -31,6 +32,7 @@
 @import 'search-form';
 @import 'pagination';
 @import 'mixin';
+@import 'aside';
 
 // 共通css
 html {
@@ -39,12 +41,6 @@ html {
 
 body {
   margin-bottom: 20px;
-}
-
-.container {
-  max-width: 330px;
-  margin: 0 auto;
-  margin-top: 40px;
 }
 
 a {

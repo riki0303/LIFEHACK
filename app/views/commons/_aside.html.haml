@@ -1,0 +1,30 @@
+- if user_signed_in?
+  %aside.aside
+    .aside__nav-item
+      = link_to posts_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-house
+        %p ホーム
+    .aside__nav-item
+      = link_to timeline_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-user-group
+        %p タイムライン
+    .aside__nav-item
+      = link_to new_post_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-plus
+        %p 新規投稿
+    .aside__nav-item
+      = link_to profile_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-user
+        %p プロフィール
+    .aside__nav-item
+      = link_to searches_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-magnifying-glass
+        %p ユーザー検索
+    .aside__nav-item
+      = link_to favorites_path, class: 'aside__nav-link' do
+        %i.fa-solid.fa-heart
+        %p いいね一覧
+    .aside__nav-item
+      = link_to destroy_user_session_path, class: 'aside__nav-link', method: :delete, data: { confirm: 'ログアウトして宜しいですか？' } do
+        %i.fa-solid.fa-right-to-bracket
+        %p ログアウト

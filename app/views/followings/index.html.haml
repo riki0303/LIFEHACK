@@ -1,6 +1,7 @@
 = render 'commons/header', title: 'フォロー中'
 
 .container
+  = render 'commons/aside'
   .user
     - @followings.each do |following|
       .user__item

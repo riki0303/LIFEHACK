@@ -1,7 +1,7 @@
 = render 'commons/header', title: 'LIFEHACK'
 
-
 .container
+  = render 'commons/aside'
   = render 'search-form', title: '投稿検索', q:@q, posts:@posts
 
   .post
@@ -11,3 +11,4 @@
 
 
 = paginate @posts
+
