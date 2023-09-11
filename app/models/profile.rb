@@ -17,7 +17,6 @@ class Profile < ApplicationRecord
   validates :name, length: { maximum: 30 }
   validates :bio, length: { maximum: 150 }
 
-
   belongs_to :user
   has_one_attached :avatar
 end
