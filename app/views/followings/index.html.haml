@@ -1,6 +1,7 @@
 = render 'commons/header', title: 'フォロー中'
 
 .container
+  = render 'commons/aside'
   .user
     - @followings.each do |following|
       .user__item
@@ -10,3 +11,4 @@
         .user__right
           = link_to account_path(following.id), class: 'user__account' do
             = following.account
+  = paginate @followings

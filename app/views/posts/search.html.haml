@@ -1,6 +1,7 @@
 = render 'commons/header', title: '投稿検索'
 
 .container
+  = render 'commons/aside'
   = render 'search-form', title: '投稿検索', q:@q, posts:@posts
 
   - if @posts.present?

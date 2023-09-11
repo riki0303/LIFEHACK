@@ -1,6 +1,7 @@
 = render 'commons/header', title: 'いいね一覧'
 
 .container
+  = render 'commons/aside'
   .post
     - @posts.each do |post|
       .post__item

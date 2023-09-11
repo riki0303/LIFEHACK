@@ -1,6 +1,8 @@
 = render 'commons/header', title: 'ユーザー検索'
 
+
 .container
+  = render 'commons/aside'
   = search_form_for @q,url:searches_path do |f|
     .search-form
       .search-form__item

@@ -1,4 +1,6 @@
 @import 'variable';
+@import 'mixin';
+
 .header {
   border-bottom: 1px solid $color-border;
   padding-bottom: 13px;
