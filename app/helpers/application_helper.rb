@@ -22,7 +22,7 @@ module ApplicationHelper
       twitter: {
         card: 'summary', # Twitterで表示する場合は大きいカードにする
         # site: '@', # アプリの公式Twitterアカウントがあれば、アカウント名を書く
-        image: image_url('twitter-ogp') # 配置するパスやファイル名によって変更すること
+        image: image_url('twitter-ogp.png') # 配置するパスやファイル名によって変更すること
       }
     }
   end
