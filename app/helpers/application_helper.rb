@@ -15,7 +15,7 @@ module ApplicationHelper
         description: :description,
         type: 'website',
         url: request.original_url,
-        image: image_url('top-logo'), # 配置するパスやファイル名によって変更すること
+        image: image_url('top-logo.png'), # 配置するパスやファイル名によって変更すること
         local: 'ja-JP'
       },
       # Twitter用の設定を個別で設定する
