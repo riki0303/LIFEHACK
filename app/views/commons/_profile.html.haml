@@ -38,5 +38,7 @@
     - posts.each do |post|
       = link_to post_path(post) do
         = image_tag post.image, class: 'profile__post'
+  - if posts.empty?
+    %p LIFEHACKで初めての投稿をしてみましょう!
 
   = paginate posts
