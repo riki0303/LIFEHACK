@@ -1,31 +1,35 @@
-.post__head
-  = link_to account_path(post.user) do
-    = user_avatar(post)
-  = link_to account_path(post.user) do
-    = post.user.account
-  - if my_post?(current_user, post)
-    %i.fa-regular.fa-pen-to-square.post__tab
-      %ul.post__nav
-        %li.post__nav-item
-          = link_to '編集', edit_post_path(post), class: 'post__nav-link'
-        %li.post__nav-item
-          = link_to '削除', post_path(post), method: :delete, data: { confirm: '削除して宜しいですか？' }, class: 'post__nav-link'
+- if post.present?
+  .post__head
+    = link_to account_path(post.user) do
+      = user_avatar(post)
+    = link_to account_path(post.user) do
+      = post.user.account
+    - if my_post?(current_user, post)
+      %i.fa-regular.fa-pen-to-square.post__tab
+        %ul.post__nav
+          %li.post__nav-item
+            = link_to '編集', edit_post_path(post), class: 'post__nav-link'
+          %li.post__nav-item
+            = link_to '削除', post_path(post), method: :delete, data: { confirm: '削除して宜しいですか？' }, class: 'post__nav-link'
 
-= link_to post_path(post), class: 'post__image' do
-  = image_tag post.image
-.post__btn-container
-  .like
-    .hidden.like__active-heart{id: "like__active-heart#{post.id}",data: {post_id: post.id}}
-      = image_tag 'active-heart.png'
-    .hidden.like__inactive-heart{id: "like__inactive-heart#{post.id}",data: {post_id: post.id}}
-      = image_tag 'inactive-heart.png'
-  .post__count.like-count-js{id: "like-count-js#{post.id}",data: {post_id: post.id}}
-    = display_likes_count(post)
-  = link_to  image_tag('comment.png'), new_post_comment_path(post)
-  .post__count= comments_count(post)
-  = link_to image_tag('share.png'), "https://twitter.com/share?url=#{ request.url }&text=#{ post.title }%0a%0a#{ post.content }", target: '_blank'
-%h2.post__title
-  = post.title
-%p.post__content
-  = post.content
+  = link_to post_path(post), class: 'post__image' do
+    = image_tag post.image
+  .post__btn-container
+    .like
+      .hidden.like__active-heart{id: "like__active-heart#{post.id}",data: {post_id: post.id}}
+        = image_tag 'active-heart.png'
+      .hidden.like__inactive-heart{id: "like__inactive-heart#{post.id}",data: {post_id: post.id}}
+        = image_tag 'inactive-heart.png'
+    .post__count.like-count-js{id: "like-count-js#{post.id}",data: {post_id: post.id}}
+      = display_likes_count(post)
+    = link_to  image_tag('comment.png'), new_post_comment_path(post)
+    .post__count= comments_count(post)
+    = link_to image_tag('share.png'), "https://twitter.com/share?url=#{ request.url }&text=#{ post.title }%0a%0a#{ post.content }", target: '_blank'
+  %h2.post__title
+    = post.title
+  %p.post__content
+    = post.content
+
+- else
+  %p.post__content 投稿がありません。
 
