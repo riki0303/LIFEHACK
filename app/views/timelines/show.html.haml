@@ -4,12 +4,11 @@
 .container
   = render 'commons/aside'
   .post
-    - if @posts.present?
-      - @posts.each do |post|
-        .post__item
-          = render 'commons/post', post: post
-    - else
-      %p 投稿がありません。
+    - @posts.each do |post|
+      .post__item
+        = render 'commons/post', post: post
+    - if @posts.empty?
+      %p 投稿がありません
 
 
 

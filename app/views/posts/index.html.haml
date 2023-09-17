@@ -8,6 +8,8 @@
     - @posts.each do |post|
       .post__item
         = render 'commons/post', post: post
+    - if @posts.empty?
+      %p 投稿がありません
 
 
 = paginate @posts
