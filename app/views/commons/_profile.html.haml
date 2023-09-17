@@ -4,6 +4,8 @@
     = display_profile_avatar(profile, 'profile__avatar')
     %p.profile__name
       = profile&.name
+      - if @user == current_user && profile&.name.empty? && profile&.bio.empty?
+        %p 名前・自己紹介が未設定です。
     %p.profile__bio
       = profile&.bio
 
@@ -36,5 +38,7 @@
     - posts.each do |post|
       = link_to post_path(post) do
         = image_tag post.image, class: 'profile__post'
+  - if posts.empty?
+    %p LIFEHACKで初めての投稿をしてみましょう!
 
   = paginate posts

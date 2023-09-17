@@ -14,7 +14,7 @@
 
 .header__title {
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -34,7 +34,7 @@
   top: -15px;
   right: 0;
   z-index: 1;
-  width: 150px;
+  width: 180px;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
@@ -46,16 +46,16 @@
 
 .header__nav-item {
   text-align: left;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .header__nav-item:first-child {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .header__nav-link {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 10px;
+  gap: 10px;
+  padding: 15px;
 }

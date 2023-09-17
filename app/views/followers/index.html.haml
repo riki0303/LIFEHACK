@@ -3,12 +3,14 @@
 .container
   = render 'commons/aside'
   .user
-  - @followers.each do |follower|
-    .user__item
-      .user__left
-        = link_to account_path(follower.id) do
-          = display_profile_avatar(follower.profile, 'user__avatar')
-      .user__right
-        = link_to account_path(follower.id), class: 'user__account' do
-          = follower.account
+    - @followers.each do |follower|
+      .user__item
+        .user__left
+          = link_to account_path(follower.id) do
+            = display_profile_avatar(follower.profile, 'user__avatar')
+        .user__right
+          = link_to account_path(follower.id), class: 'user__account' do
+            = follower.account
+    - if @followers.empty?
+      %p フォロワーはいません
   = paginate @followers
