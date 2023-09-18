@@ -21,11 +21,11 @@
 .post__nav {
   display: none;
   position: absolute;
-  top: 0;
+  top: -10px;
   right: 0;
   z-index: 1;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 100px;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
@@ -37,11 +37,12 @@
 }
 
 .post__nav {
-  padding-top: 3px;
+  padding-top: 10px;
+  text-align: center;
 }
 .post__nav-link {
   display: block;
-  padding: 10px 20px;
+  padding: 20px 20px;
   font-size: 18px;
   font-weight: bold;
 }

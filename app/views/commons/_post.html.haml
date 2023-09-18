@@ -4,7 +4,7 @@
   = link_to account_path(post.user) do
     = post.user.account
   - if my_post?(current_user, post)
-    %i.fa-regular.fa-pen-to-square.post__tab
+    %i.fa-regular.fa-lg.fa-pen-to-square.post__tab
       %ul.post__nav
         %li.post__nav-item
           = link_to '編集', edit_post_path(post), class: 'post__nav-link'
