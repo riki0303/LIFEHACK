@@ -4,7 +4,7 @@
     = display_profile_avatar(profile, 'profile__avatar')
     %p.profile__name
       = profile&.name
-      - if @user == current_user && profile&.name.empty? && profile&.bio.empty?
+      - if @user == current_user && profile&.name&.empty? && profile&.bio&.empty?
         %p 名前・自己紹介が未設定です。
     %p.profile__bio
       = profile&.bio
