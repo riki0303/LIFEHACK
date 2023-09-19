@@ -1,24 +1,16 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-- Ruby version
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
+## アプリケーション名
+LIFEHACK（ライフハック）
+## URL
+## テスト用アカウント
+## 概要
+## 制作した背景
+## ペルソナ
+## ペルソナの課題
+## 用件定義
+## 利用方法
+## 今後実装予定の機能
+## データベース設計
+## 画面遷移図
+## 開発環境
+- 言語　HTML / CSS / Ruby / Ruby on Rails /JavaScript
+- サービス　Heroku / GitHub / AWS
