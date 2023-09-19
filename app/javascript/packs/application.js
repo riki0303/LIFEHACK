@@ -10,3 +10,4 @@ require('channels');
 require('./follow');
 require('./like');
 require('./preview');
+require('./tab')
