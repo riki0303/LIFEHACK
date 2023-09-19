@@ -29,19 +29,25 @@
 }
 
 .header__nav {
-  display: none;
+  display: block;
   position: absolute;
-  top: -15px;
+  top: 20px;
   right: 0;
   z-index: 1;
   width: 180px;
   background: #fff;
   border-radius: 3px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s cubic-bezier(0.33, 1, 0.68, 1) forwards;
 }
 
-.header__tab:hover .header__nav {
-  display: block;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .header__nav-item {

@@ -19,9 +19,9 @@
 }
 
 .post__nav {
-  display: none;
+  display: block;
   position: absolute;
-  top: -10px;
+  top: 15px;
   right: 0;
   z-index: 1;
   width: 90px;
@@ -30,10 +30,6 @@
   border-radius: 3px;
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
   list-style: none;
-}
-
-.post__tab:hover .post__nav {
-  display: block;
 }
 
 .post__nav {
