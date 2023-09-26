@@ -7,7 +7,6 @@ require('@rails/ujs').start();
 // require('turbolinks').start();
 require('@rails/activestorage').start();
 require('channels');
-require('./follow');
 require('./like');
 require('./preview');
-require('./tab')
+require('./tab');
