@@ -9,7 +9,5 @@
         %br
         紹介出来るSNSサービスです。
       .top__btn-container
-        %button.button-primary.top__btn-primary
-          = link_to 'ログイン', new_user_session_path
-        %button.button-secondary.top__btn-secondary
-          = link_to '登録', new_user_registration_path
+        = link_to 'ログイン', new_user_session_path, class: 'button-primary top__btn-primary'
+        = link_to '登録', new_user_registration_path, class: 'button-secondary top__btn-secondary'
