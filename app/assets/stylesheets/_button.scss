@@ -1,6 +1,8 @@
 @import 'variable';
 
 .button-primary {
+  display: block;
+  text-align: center;
   background-color: $color-blue;
   min-width: 327px;
   padding: 12px 0px;
@@ -9,6 +11,8 @@
 }
 
 .button-secondary {
+  display: block;
+  text-align: center;
   background-color: $color-white;
   min-width: 327px;
   padding: 12px 0px;
