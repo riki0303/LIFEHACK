@@ -37,7 +37,7 @@
   .profile__post-container
     - posts.each do |post|
       = link_to post_path(post) do
-        = image_tag post.image.variant(resize_to_fill: [108,100]), class: 'profile__post'
+        = image_tag post.image, class: 'profile__post'
   - if posts.empty?
     %p LIFEHACKで初めての投稿をしてみましょう!
 
