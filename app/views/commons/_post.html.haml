@@ -12,7 +12,7 @@
           = link_to '削除', post_path(post), method: :delete, data: { confirm: '削除して宜しいですか？' }, class: 'post__nav-link'
 
 = link_to post_path(post), class: 'post__image' do
-  = image_tag post.image
+  = image_tag post.image.variant(resize_to_fill: [330,250])
 .post__btn-container
   .like
     .hidden.like__active-heart{id: "like__active-heart#{post.id}",data: {post_id: post.id}}
