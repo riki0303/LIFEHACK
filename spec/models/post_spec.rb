@@ -35,4 +35,30 @@ RSpec.describe Post, type: :model do
         end
       end
     end
+
+    describe 'content' do
+      context 'contentが未入力の場合' do
+        let!(:post)  { build(:post, content:'',  user: user)}
+
+        before do
+          post.save
+        end
+
+        it '投稿を保存できない' do
+          expect(post).to_not be_valid
+        end
+      end
+
+      context 'contenteが141文字以上の場合' do
+        let!(:post)  { build(:post, content:Faker::Lorem.characters(number: 150),  user: user)}
+
+        before do
+          post.save
+        end
+
+        it '投稿を保存できない' do
+          expect(post).to_not be_valid
+        end
+      end
+    end
 end
