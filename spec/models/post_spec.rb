@@ -61,4 +61,15 @@ RSpec.describe Post, type: :model do
         end
       end
     end
+
+    describe 'image' do
+      context 'imageが未入力の場合' do
+        user = User.create(account: 'account', email: 'test@test.com', password: 'password')
+        post = user.posts.build(title: 'Sample Post', content: 'This is a sample post content.')
+
+        it '投稿を保存できない' do
+          expect(post).to_not be_valid
+        end
+      end
+    end
 end
