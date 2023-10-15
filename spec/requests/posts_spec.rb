@@ -57,6 +57,13 @@ RSpec.describe 'Posts', type: :request do
         expect(Post.first.content).to eq('update_content')
       end
     end
+
+    describe 'DELETE /posts/:id' do
+      it '記事を削除出来る' do
+        expect {delete post_path(Post.first.id)}.to change(Post, :count).by(-1)
+        expect(response).to redirect_to(posts_path)
+      end
+    end
   end
 
   context 'ログインしていない場合' do
