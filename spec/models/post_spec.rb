@@ -3,12 +3,13 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   let!(:user) { create(:user)}
 
-  context 'タイトル、内容、画像が入力されている場合'
+  context 'タイトル、内容、画像が入力されている場合' do
     let!(:post)  { build(:post, user: user)}
 
     it '投稿を保存できる' do
       expect(post).to be_valid
     end
+  end
 
     describe 'title' do
       context 'titleが未入力の場合' do
@@ -19,7 +20,7 @@ RSpec.describe Post, type: :model do
         end
 
         it '投稿を保存できない' do
-          expect(post).to_not be_valid
+          expect(post.errors.full_messages).to eq(['タイトルを入力してください'])
         end
       end
 
@@ -31,7 +32,7 @@ RSpec.describe Post, type: :model do
         end
 
         it '投稿を保存できない' do
-          expect(post).to_not be_valid
+          expect(post.errors.full_messages).to eq(['タイトルは30文字以内で入力してください'])
         end
       end
     end
@@ -45,7 +46,7 @@ RSpec.describe Post, type: :model do
         end
 
         it '投稿を保存できない' do
-          expect(post).to_not be_valid
+          expect(post.errors.full_messages).to eq(['投稿内容を入力してください'])
         end
       end
 
@@ -57,7 +58,7 @@ RSpec.describe Post, type: :model do
         end
 
         it '投稿を保存できない' do
-          expect(post).to_not be_valid
+          expect(post.errors.full_messages).to eq(['投稿内容は140文字以内で入力してください'])
         end
       end
     end
