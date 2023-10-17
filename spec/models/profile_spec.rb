@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Profile, type: :model do
   let!(:user) { create(:user, :with_profile) }
 
-
   context 'name,bioが入力されている場合' do
     it 'プロフィールを保存できる' do
       expect(user.profile).to be_valid
@@ -11,7 +10,7 @@ RSpec.describe Profile, type: :model do
   end
 
   context 'nameが31文字以上の場合' do
-    let!(:profile) { create(:profile, name:Faker::Lorem.characters(number: 40), user: user) }
+    let!(:profile) { build(:profile, name:Faker::Lorem.characters(number: 40), user: user) }
     before do
       user.profile.save
     end
