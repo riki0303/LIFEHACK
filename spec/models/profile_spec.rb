@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Profile, type: :model do
-  let!(:user) { create(:user, :with_profile) }
+  let!(:user) { create(:user) }
+  let!(:profile) { create(:profile, user: user) }
 
   context 'name,bioが入力されている場合' do
     it 'プロフィールを保存できる' do

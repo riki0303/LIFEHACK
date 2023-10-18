@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Profile', type: :system do
-  let!(:user) { create(:user, :with_profile) }
+  let!(:user) { create(:user) }
+  let!(:profile) { create(:profile, user: user) }
   let!(:posts) { create_list(:post, 3, user: user) }
 
   context 'ログインしている場合' do
