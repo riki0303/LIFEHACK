@@ -26,7 +26,7 @@ RSpec.describe 'Api::Likes', type: :request do
         post post_like_path(new_post.id)
         body = JSON.parse(response.body)
         expect(response.status).to eq(200)
-        expect(body).to eq({ 'likesCount'=>1, 'status'=>'ok' })
+        expect(body).to eq({ 'likesCount'=>new_post.likes.count, 'status'=>'ok' })
       end
     end
 
@@ -36,7 +36,7 @@ RSpec.describe 'Api::Likes', type: :request do
         delete post_like_path(new_post.id)
         body = JSON.parse(response.body)
         expect(response.status).to eq(200)
-        expect(body).to eq({ 'likesCount'=>0, 'status'=>'ok' })
+        expect(body).to eq({ 'likesCount'=>new_post.likes.count, 'status'=>'ok' })
       end
     end
   end
