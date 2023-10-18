@@ -5,10 +5,10 @@ FactoryBot.define do
     password { 'password' }
     password_confirmation { 'password' }
 
-    trait :with_profile do
-      after :build do |user|
-        build(:profile, user: user)
-      end
-    end
+    # trait :with_profile do
+    #   after :build do |user|
+    #     build(:profile, user: user)
+    #   end
+    # end
   end
 end
