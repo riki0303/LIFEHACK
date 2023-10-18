@@ -20,23 +20,12 @@ RSpec.describe 'Api::Follows', type: :request do
     end
 
     describe 'POST /api/like' do
-      it 'いいね出来る' do
+      it 'フォロー出来る' do
         post account_follow_path(user2.id)
         body = JSON.parse(response.body)
         expect(response.status).to eq(200)
         expect(body).to eq({ 'status'=>'ok', 'followersCount'=>user2.follower_relationships.count })
-        binding.pry
       end
     end
-
-    # describe 'DELETE /api/likes' do
-    #   let!(:like) { create(:like, user: user, post: post) }
-    #   it 'いいねを削除できる' do
-    #     delete post_like_path(post.id)
-    #     body = JSON.parse(response.body)
-    #     expect(response.status).to eq(200)
-    #     expect(body).to eq({ 'likesCount'=>0, 'status'=>'ok' })
-    #   end
-    # end
   end
 end
