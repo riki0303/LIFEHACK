@@ -17,14 +17,11 @@ RSpec.describe 'Post', type: :system do
       end
     end
 
-    it '記事詳細が表示される' do
+    it '自分の記事の編集ボタンがクリックできる' do
       visit posts_path
-      post = posts.first
-      # 投稿画像をクリック(alt = post.title)
-      click_on post.title
-      expect(page).to have_css('.post__image')
-      expect(page).to have_css('.post__title', text: post.title)
-      expect(page).to have_css('.post__content', text: post.content)
+      first('.post__tab').click
+      click_on('編集')
+      expect(current_path).to eq edit_post_path(posts.last.id)
     end
   end
 end
