@@ -34,10 +34,7 @@ RSpec.describe 'Post', type: :system do
         before { post.destroy }
         it '他人の記事の編集・削除ボタンはクリックできない' do
           visit posts_path
-          expect {
-            find('.post__tab').click
-          }.to raise_error(Capybara::ElementNotFound)
-          expect(current_path).to eq posts_path
+          expect(page).to_not have_css('.post__tab')
         end
       end
     end
