@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comments = @post.comments.order(id: 'DESC')
+    @comments = @post.comments.includes(user: { profile: :avatar_attachment }).page(params[:page]).order(id: 'DESC')
   end
 
   def new
