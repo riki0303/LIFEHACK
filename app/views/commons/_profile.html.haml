@@ -1,13 +1,17 @@
 .container#account-show{data: {user_id: user.id, }}
   = render 'commons/aside'
   .profile
-    = display_profile_avatar(profile, 'profile__avatar')
+    = display_profile_avatar(profile, 'profile__avatar popup')
     %p.profile__name
       = profile&.name
       - if @user == current_user && profile&.name&.empty? && profile&.bio&.empty?
         %p 名前・自己紹介が未設定です。
     %p.profile__bio
       = profile&.bio
+  -# モーダル用
+  #modal-container
+    %div
+      %img{src: ""}/
 
   - if @user == current_user
     .profile__btn
@@ -45,3 +49,4 @@
 
 
   = javascript_pack_tag 'follow'
+  = javascript_pack_tag 'modal'
