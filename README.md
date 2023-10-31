@@ -1,5 +1,7 @@
-## アプリケーション名
-LIFEHACK（ライフハック）
+## アイテム共有SNS「LIFEHACK」
+![スクリーンショット 2023-10-31 21 10 05](https://github.com/riki0303/LIFEHACK/assets/121366137/88d091c0-4858-4670-873f-0fae352fe7d2)
+
+
 ## URL
 https://lifehack-c418ed94be78.herokuapp.com/
 ## テスト用アカウント
