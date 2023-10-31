@@ -78,6 +78,13 @@ LIFEHACKは便利なアイテムを紹介・閲覧出来るWebアプリケーシ
 ## 画面遷移図
 <img width="606" alt="スクリーンショット 2023-09-26 17 53 26" src="https://github.com/riki0303/LIFEHACK/assets/121366137/a272245d-7733-44c7-ab89-87852f798d45">
 
-## 開発環境  
-- 言語　HTML / CSS / JavaScript / Ruby/Ruby on Rails 
-- サービス　Heroku / GitHub / AWS
+## 使用技術  
+### バックエンド
+- Ruby 2.7.7
+- Rails 6.0.6.1
+### フロントエンド
+- JavaScript (jQuery)
+- CSS (SCSS)
+### インフラ
+- Heroku
+- Amazon S3
