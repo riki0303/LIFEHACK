@@ -31,6 +31,9 @@ LIFEHACKは便利なアイテムを紹介・閲覧出来るWebアプリケーシ
 [要件定義シート_LIFEHACK](https://docs.google.com/spreadsheets/d/1cnBUSZSdrG1cA8rBjxoT0Pq5QipyMIcKsQbRJg7gbB0/edit?pli=1#gid=982722306
 )
 
+## デザイン案
+[Figma_LIFEHACK](https://www.figma.com/file/JJfOLklpXoTM5jdX8lgCfo/LIFEHACK?type=design&node-id=33%3A394&mode=design&t=jDydBHJBR8P1NPjh-1
+)
 
 ## 利用方法
 ### ユーザー管理機能
