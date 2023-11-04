@@ -4,12 +4,10 @@ RSpec.describe 'Posts', type: :request do
   let!(:user) { create(:user) }
   let!(:posts) { create_list(:post, 3, user: user) }
 
-
   context 'ログインしている場合' do
     before do
       sign_in user
     end
-
 
     describe 'GET /posts' do
       it '記事一覧ページで200ステータスが返ってくる' do
