@@ -15,8 +15,6 @@ RSpec.describe 'Post', type: :system do
       expect(page).to have_css('.post__content', text: post.content)
     end
 
-
-
     describe '投稿の編集' do
       context '自分の投稿の場合' do
         it '記事の編集・削除ボタンが表示されクリックできる' do

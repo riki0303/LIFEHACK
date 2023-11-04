@@ -4,7 +4,6 @@ RSpec.describe Post, type: :model do
   let!(:user) { create(:user)}
   let!(:post)  { build(:post, user: user)}
 
-
   context 'タイトル、内容、画像が入力されている場合' do
     it '投稿を保存できる' do
       expect(post).to be_valid
