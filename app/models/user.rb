@@ -62,6 +62,14 @@ class User < ApplicationRecord
     following_relationships.exists?(following_id: user.id)
   end
 
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.account = 'guestuser'
+    end
+  end
+
   private
     def get_user_id(user)
       if user.is_a?(User)
