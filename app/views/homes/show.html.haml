@@ -10,4 +10,5 @@
         紹介出来るSNSサービスです。
       .top__btn-container
         = link_to 'ログイン', new_user_session_path, class: 'button-primary top__btn-primary'
+        = link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class: 'button-secondary top__btn-secondary'
         = link_to '登録', new_user_registration_path, class: 'button-secondary top__btn-secondary'
