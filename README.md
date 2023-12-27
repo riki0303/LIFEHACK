@@ -3,13 +3,9 @@
 
 
 ## URL
-https://lifehack-c418ed94be78.herokuapp.com/
-## テスト用アカウント
-以下の通りのアドレスとパスワードでログインしサービスを体験していただけます。
-
-- ログインページ: https://lifehack-c418ed94be78.herokuapp.com/users/sign_in
-- メールアドレス：test01@gmail.com
-- パスワード：test01
+https://lifehack-c418ed94be78.herokuapp.com/  
+  
+ゲストログインにて気軽にサービスを体験する事が出来ます。
 ## 概要
 LIFEHACKは便利なアイテムを紹介・閲覧出来るWebアプリケーションです。以下のような機能があります。
 
