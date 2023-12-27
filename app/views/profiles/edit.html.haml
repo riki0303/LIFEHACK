@@ -7,21 +7,23 @@
       = message
 
   .form
-    -if @user.email == 'guest@example.com'
-      %p ゲストユーザーはプロフィールの編集ができません。
-    - else
-      = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
-        .form__item
-          = f.text_field :name, autofocus: true, placeholder: '名前', class: 'form__field'
-        .form__item
-          = f.text_area :bio, autofocus: true, placeholder: '自己紹介', class: 'form__field'
-        .form__item
-          = f.file_field :avatar
-        #form__new-image
-        - if @profile.avatar.attached?
-          = image_tag @profile.avatar, class: 'form__new-image'
+    = form_with(model: @profile, url: profile_path, method: 'put', local: true) do |f|
+      .form__item
+        = f.text_field :name, autofocus: true, placeholder: '名前', class: 'form__field'
+      .form__item
+        = f.text_area :bio, autofocus: true, placeholder: '自己紹介', class: 'form__field'
+      .form__item
+        = f.file_field :avatar
+      #form__new-image
+      - if @profile.avatar.attached?
+        = image_tag @profile.avatar, class: 'form__new-image'
+      -if guest_user?(@user)
+        %p.form__button.button-primary
+          ゲストユーザーは
+          %br プロフィールの編集ができません。
+      - else
         %button.form__button.button-primary
-          = f.submit "更新する"
+        = f.submit "更新する"
 
 
 = javascript_pack_tag 'preview-avatar'
