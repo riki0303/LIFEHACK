@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
   # new,create省略出来るが、profileが存在する場合と存在しない場合を意識して処理を書く必要がある
   def edit
     @profile = current_user.prepare_profile
+    @user = current_user
   end
 
   def update
