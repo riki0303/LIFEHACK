@@ -11,5 +11,10 @@
     = form_with(model: @comment, url: post_comments_path(@post), local: true) do |f|
       .form__item
         = f.text_area :content, autofocus: true, placeholder: 'コメント', class: 'form__field'
-      %button.form__button.button-primary
-        = f.submit "コメント投稿"
+      -if guest_user?(@user)
+        %p.form__button.button-primary
+          ゲストユーザーは
+          %br コメントを作成出来ません。
+      - else
+        %button.form__button.button-primary
+          = f.submit "コメント投稿"
