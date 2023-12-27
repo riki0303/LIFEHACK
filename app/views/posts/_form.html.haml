@@ -15,7 +15,12 @@
       #form__new-image
       - if post.image.attached?
         = image_tag post.image, class: 'form__new-image'
-      %button.form__button.button-primary
+      -if guest_user?(@user)
+        %p.form__button.button-primary
+          ゲストユーザーは
+          %br 投稿を作成出来ません。
+      - else
+        %button.form__button.button-primary
         = f.submit "投稿"
 
 
