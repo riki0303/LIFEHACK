@@ -1,5 +1,5 @@
 ## アイテム共有SNS「LIFEHACK」
-![スクリーンショット 2023-10-31 21 10 05](https://github.com/riki0303/LIFEHACK/assets/121366137/88d091c0-4858-4670-873f-0fae352fe7d2)
+![946D1CE2-D080-4174-BB01-60110DBC08EC_1_201_a](https://github.com/riki0303/LIFEHACK/assets/121366137/4c75a7b3-a59c-4a33-a3ca-c52bbdc81013)
 
 
 ## URL
