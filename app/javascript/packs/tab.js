@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
       $('.header__nav').addClass('hidden');
     }
   });
-// ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+  // ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
   $('.post__tab').on('click', function () {
     $(this).children().toggleClass('hidden');
   });
 
-  $(document).on('click', function (event) {
+  $(document).on('click', (event) => {
     if (!$(event.target).closest('.post__tab').length) {
       // .post__tab以外の要素がクリックされた場合、.hiddenクラスを削除
       $('.post__tab').children().addClass('hidden');
