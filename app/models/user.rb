@@ -25,6 +25,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :account, length: {minimum: 6}, uniqueness: true
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  validates :password, format: { with: VALID_PASSWORD_REGEX , message: 'は英数字混合の6文字以上で入力してください'}
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
